@@ -1,0 +1,17 @@
+apt install nginx
+ systemctl enable nginx
+ systemctl restart nginx
+ systemctl status nginx
+
+vim /etc/nginx/sites-available/default
+
+upstream backend {
+	server 10.10.10.19;
+	server 10.10.10.20;
+}
+server {
+	listen 80;
+	location / {
+		proxy_pass http://backend;
+	}
+}
