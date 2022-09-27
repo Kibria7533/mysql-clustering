@@ -1,0 +1,17 @@
+:/etc/mysql/percona-xtradb-cluster.conf.d#
+
+wsrep_provider=/usr/lib/libgalera_smm.so
+wsrep_cluster_name=democluster
+wsrep_cluster_address=gcomm://10.10.10.6,10.10.10.7,10.10.10.18
+wsrep_node_name=pxc-cluster-node-2
+wsrep_node_address=10.10.10.7
+wsrep_sst_method=xtrabackup-v2
+wsrep_sst_auth=repuser:reppassword
+pxc_strict_mode=ENFORCING
+#pxc_strict_mode=PERMISSIVE
+binlog_format=ROW
+default_storage_engine=InnoDB
+innodb_autoinc_lock_mode=2
+
+
+0012700000811
